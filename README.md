@@ -70,7 +70,6 @@
 ![消費者訂房紀錄-評論](/src/main/resources/static/images/cover/%E6%B6%88%E8%B2%BB%E8%80%85%E8%A8%82%E6%88%BF%E7%B4%80%E9%8C%84-%E8%A9%95%E8%AB%96.png)
 
 ## 專案API說明
----
 
 我所實作的功能可以歸納為以下:
 
@@ -88,20 +87,21 @@
 |/rooms/search/{keyword}/{people}/{startDate}/{endDate}/{currPage}|GET|列出關鍵字所搜尋出並且時間區間內尚有庫存的所有房型資訊|
 |/rooms/search/{keyword}/{people}/{startDate}/{endDate}|GET|列出與被點擊的景點同所在縣市的隨機三間房型資訊|
 
+**以下僅列出一筆示意**
+
 ```json
-// 以下僅列出其中一筆資料
 {
-    pageSize: 6,
-    rows: [
+    "pageSize": 6,
+    "rows": [
         {
-            comId: 5,
-            comName: "THA101",
-            comAddress: "台北市宏春大樓",
-            roomId: 28,
-            roomName: "新星經典單人房",
-            roomDesc: "輕觸在悠然自得的湖光水色，一彈一指間的沈迷放肆與您眼前那一片垂手可得",
-            roomPhoto: "base64 image",
-            orderRanks: [ ]
+            "comId": 5,
+            "comName": "THA101",
+            "comAddress": "台北市宏春大樓",
+            "roomId": 28,
+            "roomName": "新星經典單人房",
+            "roomDesc": "輕觸在悠然自得的湖光水色，一彈一指間的沈迷放肆與您眼前那一片垂手可得",
+            "roomPhoto": "base64 image",
+            "orderRanks": [ ]
         }, 
     ]
 }
@@ -113,21 +113,23 @@
 |:-|:-|:-|
 |/scenes/search/{keyword}/{currPage}|GET|列出關鍵字所搜尋出的所有景點|
 
+**以下僅列出一筆示意**
+
 ```json
-// 以下僅列出其中一筆資料
 {
-    pageSize: 9,
-    rows: [
+    "pageSize": 9,
+    "rows": [
         {
-        sceneId: 2,
-        adminId: 1,
-        sceneName: "大稻埕碼頭",
-        sceneDesc: "早期的大稻埕，原是平埔族的居住地，後來因萬華同安人發生激烈的械鬥，許多人便移至大稻埕定居，此後，這裡便成為台北盆地內的物資集散中心，與重要的外貿重要地點，當地的領事館、洋行、商號雲集，茶館、茶行林立，這裡便成了當時全口最大的茶葉、樟腦交易中心，今日的大稻埕，仍可在街道裡看出一些些的遺留下的歷史記錄，而碼頭更經常成為演出活動的舉辦地點，我相信這裡將永遠不會被人們所遺忘。",
-        scenePhoto: "Base64 image",
-        sceneAddr: "台北市大同區長安西路39號",
-        sceneLat: "25.050754681647852",
-        sceneLng: "121.51912729848034",
-        scenePlaceId: "ChIJc-TxSWypQjQR-8Eh7elK97Q"
+            "sceneId": 2,
+            "adminId": 1,
+            "sceneName": "大稻埕碼頭",
+            "sceneDesc": "早期的大稻埕，原是平埔族的居住地，後來因萬華同安人發生激烈的械鬥，許多人便移至大稻埕定居，此後，這裡便成為台北盆地內的物資集散中心，與重要的外貿重要地點，當地的領事館、洋行、商號雲集，茶館、茶行林立，這裡便成了當時全口最大的茶葉、樟腦交易中心，今日的大稻埕，仍可在街道裡看出一些些的遺留下的歷史記錄，而碼頭更經常成為演出活動的舉辦地點，我相信這裡將永遠不會被人們所遺忘。",
+            "scenePhoto": "Base64 image",
+            "sceneAddr": "台北市大同區長安西路39號",
+            "sceneLat": "25.050754681647852",
+            "sceneLng": "121.51912729848034",
+            "scenePlaceId": "ChIJc-TxSWypQjQR-8Eh7elK97Q"
         }, 
+    ]
 }
 ```
