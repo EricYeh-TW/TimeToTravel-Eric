@@ -82,7 +82,6 @@
 |房型訂單|rooms/booking|負責訂房訂單查詢及訂房下訂|
 
 ## 搜尋房型
----
 
 |URL|Method|簡述|
 |:-|:-|:-|
@@ -90,6 +89,7 @@
 |/rooms/search/{keyword}/{people}/{startDate}/{endDate}|GET|列出與被點擊的景點同所在縣市的隨機三間房型資訊|
 
 ```json
+// 以下僅列出其中一筆資料
 {
     pageSize: 6,
     rows: [
@@ -102,19 +102,19 @@
             roomDesc: "輕觸在悠然自得的湖光水色，一彈一指間的沈迷放肆與您眼前那一片垂手可得",
             roomPhoto: "base64 image",
             orderRanks: [ ]
-        }, ...
+        }, 
     ]
 }
 ```
 
 ## 搜尋景點
----
 
 |URL|Method|簡述|
 |:-|:-|:-|
 |/scenes/search/{keyword}/{currPage}|GET|列出關鍵字所搜尋出的所有景點|
 
 ```json
+// 以下僅列出其中一筆資料
 {
     pageSize: 9,
     rows: [
@@ -128,6 +128,6 @@
         sceneLat: "25.050754681647852",
         sceneLng: "121.51912729848034",
         scenePlaceId: "ChIJc-TxSWypQjQR-8Eh7elK97Q"
-        }, ...
+        }, 
 }
 ```
