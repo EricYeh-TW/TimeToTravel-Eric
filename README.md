@@ -105,7 +105,6 @@
             roomPhoto: "base64 image",
             orderRanks: [ ]
         }, 
-        ...
     ]
 }
 ```
