@@ -1,3 +1,5 @@
+[回到README](/README.md)
+
 我所實作的功能可以歸納為以下:
 
 |功能|前綴|簡述|
@@ -105,5 +107,97 @@
 
 ## 房型付款
 
+|URL|Method|簡述|
+|:-|:-|:-|
+|/rooms/paid/{roomId}/{startDate}/{endDate}|GET|列出剛剛點擊訂房房型資訊以及該商家提供的加購行程|
+|/rooms/paid|POST|新增一筆訂房訂單|
+
+**以下僅列出一筆示意**
+
+```json
+{
+    "comName": "THA101",
+    "comAddress": "台北市宏春大樓",
+    "comPhone": "1234567890",
+    "roomName": "新光閃亮星空",
+    "roomBed": "單人房",
+    "roomBreakfast": false,
+    "roomPeople": "1",
+    "roomDesc": "以藍白色調為基底的海洋風，象徵每次出發都會有個最棒的開始，給你無限的勇氣和力量。",
+    "roomPrice": 15000,
+    "roomPhoto": "base64 image",
+    "userName": "Tim",
+    "userEmail": "tim001@gmail.com",
+    "userPhone": "0966666666",
+    "checkIn": "2023-06-15",
+    "checkOut": "2023-06-17",
+    "journey": [
+        {
+            "journeyId": 5,
+            "comId": 5,
+            "journeyName": "幾米城市小旅行",
+            "journeyPrice": 800,
+            "journeyDesc": "宜蘭幾米公園 (幾米主題廣場) 和宜蘭火車站、丟丟噹森林，將《星空》、《向左走·向右走》、《地下鐵》等， 經典場景在幾米廣場完整重現",
+            "journeyPhoto": "base64 image",
+            "journeyStatus": true
+        }
+    ]
+}
+```
+POST method request body
+
+```json
+{
+    "roomId": "28",
+    "journeyId": 6,
+    "journeyName": "台南南風俱樂部-旗袍租借體驗",
+    "journeyPrice": 1500,
+    "orderAmount": 25500,
+    "orderCheckIn": "2023-06-15",
+    "orderCheckOut": "2023-06-17"
+}
+```
+
 ## 房型訂單
 
+|URL|Method|簡述|
+|:-|:-|:-|
+|/orders/{page}|GET|列出目前登入會員之所有訂房訂單紀錄|
+|/orders/name/{name}/{page}|GET|根據商家名稱篩選列出目前登入會員之所有訂房訂單紀錄|
+|/orders/no/{no}/{page}|GET|根據訂單編號篩選列出目前登入會員之所有訂房訂單紀錄|
+|/orders|PUT|修改該筆訂單之評分與評論|
+
+**以下僅列出一筆示意**
+
+```json
+{
+    "pageSize": 3,
+    "rows": [
+        {
+            "comId": 5,
+            "roomId": 28,
+            "orderId": 79,
+            "comName": "THA101",
+            "roomName": "新星經典單人房",
+            "roomBed": "單人房",
+            "orderCheckIn": "2023-06-15",
+            "orderCheckOut": "2023-06-17",
+            "roomPrice": 12000,
+            "journeyName": "",
+            "journeyPrice": 0,
+            "orderDatetime": "2023-06-15 23:21:16",
+            "orderAmount": 24000
+        }
+    ]
+}
+```
+
+PUT method request body
+
+```json
+{
+    "orderId": 1,
+    "orderRank": 5,
+    "orderComment": "住房體驗非常的好，下次還想再來~"
+}
+```
