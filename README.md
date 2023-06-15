@@ -72,10 +72,40 @@
 ## 專案API說明
 ---
 
-我所實作的功能可以歸納為以下三種:
+我所實作的功能可以歸納為以下:
 
 |功能|前綴|簡述|
-|:----|:-------|:--------------------|
-|搜尋|search |負責房型以及景點的搜尋|
-|訂房|booking|負責房型資訊呈現|
-|訂單|orders |負責訂房訂單查詢及訂房下訂|
+|:-|:-|:-|
+|搜尋房型|rooms/search|負責房型的搜尋|
+|搜尋景點|scenes/search|負責景點的搜尋|
+|房型訂房|rooms/detail|負責房型資訊呈現|
+|房型訂單|rooms/booking|負責訂房訂單查詢及訂房下訂|
+
+## 搜尋房型
+---
+
+|URL|Method|簡述|
+|:-|:-|:-|
+|/rooms/search|GET|重導向到房型搜尋結果頁面|
+|/rooms/search/{keyword}/{people}/{startDate}/{endDate}/{currPage}|GET|列出關鍵字所搜尋出並且時間區間內尚有庫存的所有房型資訊|
+|/rooms/search/{keyword}/{people}/{startDate}/{endDate}|GET|列出與被點擊的景點同所在縣市的隨機三間房型資訊|
+
+```json
+// Get all rooms via keywords
+{
+    pageSize: 6,
+    rows: [
+        {
+            comId: 5,
+            comName: "THA101",
+            comAddress: "台北市宏春大樓",
+            roomId: 28,
+            roomName: "新星經典單人房",
+            roomDesc: "輕觸在悠然自得的湖光水色，一彈一指間的沈迷放肆與您眼前那一片垂手可得",
+            roomPhoto: "base64 image",
+            orderRanks: [ ]
+        }, 
+        ...
+    ]
+}
+```
